@@ -2,7 +2,6 @@ import os
 import socket
 import paho.mqtt.client as mqtt
 import struct
-import binascii
 
 ALERTMSG_LENGTH = 256
 SNAPLEN = 1500
