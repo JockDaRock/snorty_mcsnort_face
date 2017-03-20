@@ -1,4 +1,4 @@
-#Snorty-McSnort-Face (Alpha)
+# Snorty-McSnort-Face (Alpha)
 
 This is my attempt (Proof of Concept) to run a small foot print version of a Snort Container Based off of a Python:Alpine container image.
 
@@ -6,7 +6,7 @@ This is my attempt (Proof of Concept) to run a small foot print version of a Sno
 
 There is a little bit of configuration required, but is fairly minimal and should get you going pretty quick.
 
-##Requirements
+## Requirements
 
 1. Have Docker and Python (Python version 2 or 3 is fine) installed on the computer you are working from.
 2. At Least basic knowledge of Python.
@@ -15,7 +15,7 @@ There is a little bit of configuration required, but is fairly minimal and shoul
 5. Familiarity with [Snort](https://www.snort.org/).
 5. Snort rules you want to test.  Simple set of rules to get you going is already provided.
 
-##Let's get started!!!
+## Let's get started!!!
 
 Git clone this repo to your computer in a terminal window.
 ```shell
@@ -96,7 +96,7 @@ b'Pinging detected
 
 That's it you are up and running.  Please feel free to put any more Snort rules in place that make sense for your network.  And please let me know what you think about this so far.
 
-###Future
+### Future
 
 I will be adding better messaging and data parsing of alert packets through python to the message broker.
 
