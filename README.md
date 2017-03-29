@@ -105,3 +105,4 @@ Adding ability to get alerts real-time or through intervals.
 Thinking about adding logging support through [Elastic Stack](https://www.elastic.co/products).
 
 Possibly adding fun services to show what is possible... like [SMS Through Tropo](https://www.tropo.com/) or chat messaging / collaboration through [Cisco Spark](https://developer.ciscospark.com/).
+
