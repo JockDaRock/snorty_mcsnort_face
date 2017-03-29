@@ -2,6 +2,8 @@ import os
 import socket
 import paho.mqtt.client as mqtt
 import struct
+import dpkt
+from snortunsock import snort_listener
 
 ALERTMSG_LENGTH = 256
 SNAPLEN = 1500
@@ -24,5 +26,9 @@ while True:
     msg, ts_sec, ts_usec, caplen, pktlen, dlthdr, nethdr, transhdr, data_snort, val, pkt = struct.unpack(format, data[:format_size])
     #print(pkt)
     #print(msg)
+    pack = dpkt.ethernet.Ethernet(pkt)
+    print(pack.dst)
+    print(pack.src)
+    print(pack.type)
     snort_mqtt.publish("snort/test", str(msg))
 conn.close()

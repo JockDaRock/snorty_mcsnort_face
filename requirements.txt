@@ -1,1 +1,8 @@
 paho-mqtt
+flask
+requests
+tinydb
+eventlet
+dpkt
+ujson
+snortunsock

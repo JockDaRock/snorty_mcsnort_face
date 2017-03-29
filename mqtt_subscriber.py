@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
 
-MQTT = "10.0.0.100"
+MQTT = "10.12.27.5"
 MQTTPORT = 1883
 client = mqtt.Client()
 
@@ -12,7 +12,8 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, msg):
-    print(msg.payload.decode('unicode_escape'))
+    #.decode('unicode_escape')
+    print(msg.payload.decode('utf-8'))
 
 
 client.on_connect = on_connect
