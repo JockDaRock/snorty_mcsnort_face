@@ -23,7 +23,7 @@ RUN apk add --no-cache snort daq supervisor git
 
 RUN git clone https://github.com/JockDaRock/snortunsock.git
 RUN pwd
-RUN python3 /snortunsock/setup.py
+RUN python3 /snortunsock/setup.py install
 
 EXPOSE 5000
 
