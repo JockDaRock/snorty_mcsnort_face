@@ -22,9 +22,6 @@ RUN apk upgrade --update-cache --available
 RUN apk add --no-cache snort daq supervisor git
 
 RUN sed -i '/import alert/c\import snortunsock.alert as alert' /usr/local/lib/python3.6/site-packages/snortunsock/snort_listener.py
-#RUN git clone https://github.com/JockDaRock/snortunsock.git
-#RUN pwd
-#RUN python3 /snortunsock/setup.py install
 
 EXPOSE 5000
 
