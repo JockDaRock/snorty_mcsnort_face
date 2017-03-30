@@ -2,6 +2,5 @@ paho-mqtt
 flask
 requests
 tinydb
-eventlet
 dpkt
 snortunsock
