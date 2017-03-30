@@ -4,5 +4,4 @@ requests
 tinydb
 eventlet
 dpkt
-ujson
 snortunsock
