@@ -2,6 +2,8 @@
 
 This is my attempt (Proof of Concept) to run a small foot print version of a Snort Container Based off of a Python:Alpine container image.
 
+>Update: Added support for RESTful API for snort rules. To use the API, please refer to the POSTMAN collection in this repo.  I will update the instructions on this page soon.
+
 >Disclaimer: This is still early stages.  So if you have any suggestions, problems, or requests you would like to see.  Please let me know!
 
 There is a little bit of configuration required, but is fairly minimal and should get you going pretty quick.
