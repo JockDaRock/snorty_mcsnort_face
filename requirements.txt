@@ -3,4 +3,3 @@ flask
 requests
 tinydb
 dpkt
-snortunsock

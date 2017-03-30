@@ -22,7 +22,10 @@ RUN apk upgrade --update-cache --available
 RUN apk add --no-cache snort daq supervisor git
 
 RUN git clone https://github.com/JockDaRock/snortunsock.git
+RUN pwd
 RUN python3 /snortunsock/setup.py
+
+EXPOSE 5000
 
 #run processes from Supervisor
 ENTRYPOINT ["/usr/bin/supervisord","-c","/super_snort.conf"]
