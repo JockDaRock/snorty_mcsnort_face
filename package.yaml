@@ -1,0 +1,26 @@
+descriptor-schema-version: "2.2"
+
+info:
+  name: snorty_mcsnort_face
+  description: "IOx Docker Snort Application"
+  version: "1.0"
+  author-link: ""
+  author-name: "Jock Reed"
+
+app:
+
+  cpuarch: "x86_64"
+  type: docker
+  resources:
+    profile: c1.small
+    network:
+      -
+        interface-name: eth0
+        ports:
+          tcp:
+            - 5000
+
+  # Specify runtime and startup
+  startup:
+    rootfs: rootfs.tar
+    target: ["/usr/bin/supervisord","-c","/super_snort.conf"]
