@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
 
-MQTT = "10.12.27.5"
+MQTT = "test.mosquitto.org"
 MQTTPORT = 1883
 client = mqtt.Client()
 
@@ -12,7 +12,6 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_message(client, userdata, msg):
-    #.decode('unicode_escape')
     print(msg.payload.decode('utf-8'))
 
 
