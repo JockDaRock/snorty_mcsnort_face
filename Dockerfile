@@ -3,6 +3,7 @@ FROM python:alpine
 #Change these values dependant on your environment
 ENV MQTT="test.mosquitto.org" MQTTPORT=1883 NETINT="enp0s3"
 
+
 RUN pip install --upgrade pip setuptools wheel
 COPY requirements.txt .
 RUN pip install -r requirements.txt
