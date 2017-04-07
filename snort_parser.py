@@ -8,7 +8,7 @@ import os
 MQTT = os.environ['MQTT']
 
 snort_mqtt = mqtt.Client()
-snort_mqtt.connect(MQTT)
+snort_mqtt.connect(str(MQTT))
 snort_mqtt.loop_start()
 
 
