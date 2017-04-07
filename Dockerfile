@@ -1,7 +1,7 @@
 FROM alpine:3.5
 
 #Change these values dependant on your environment
-ENV MQTT="test.mosquitto.org" MQTTPORT=1883 NETINT="enp0s3"
+ENV MQTT="test.mosquitto.org" MQTTPORT=1883 NETINT="eth0"
 
 RUN    echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
     && apk add -Uuv --no-cache snort daq supervisor python2 python3 \

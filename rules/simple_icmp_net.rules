@@ -1,1 +1,0 @@
-#alert tcp any any -> any 80 (msg:"Port 80 access is detected"; sid:100;)

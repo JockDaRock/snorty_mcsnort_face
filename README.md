@@ -11,11 +11,11 @@ There is a little bit of configuration required, but is fairly minimal and shoul
 ## Requirements
 
 1. Have Docker and Python (Python version 2 or 3 is fine) installed on the computer you are working from.
-2. At Least basic knowledge of Python.
+2. At Least basic knowledge of Python and Docker.
 3. Knowledge of building and deploying Docker containers from commandline. 
 4. Have a MQTT Broker to send alert messages to and receive alerts from.  Alternatively you can use the [Public Mosquitto MQTT Broker](https://test.mosquitto.org/) on port 1883 as your MQTT broker.
 5. Familiarity with [Snort](https://www.snort.org/).
-5. Snort rules you want to test.  Simple set of rules to get you going is already provided.
+5. Snort rules you want to test.  Simple set of rules to get you going is already provided in the pcap files.
 
 ## Let's get started!!!
 

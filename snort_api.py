@@ -164,7 +164,7 @@ def rules():
                                                                              snort_json["msg"],
                                                                              snort_json["sid"])
 
-                with open("/etc/snort/rules/simple_icmp_net.rules", 'a+') as snort_rules:
+                with open("/etc/snort/rules/alert.rules", 'a+') as snort_rules:
                     snort_rules.write(rule_string + '\r\n')
 
                 db.insert(snort_json)
@@ -198,10 +198,10 @@ def rules():
                                                                                      snort_remove["msg"],
                                                                                      snort_remove["sid"])
 
-                with open("/etc/snort/rules/simple_icmp_net.rules", 'r') as snort_rules:
+                with open("/etc/snort/rules/alert.rules", 'r') as snort_rules:
                     snort_lines = snort_rules.readlines()
 
-                with open("/etc/snort/rules/simple_icmp_net.rules", 'w') as snort_rules:
+                with open("/etc/snort/rules/alert.rules", 'w') as snort_rules:
                     for line in snort_lines:
                         if line != removal_rule_string + '\n':
                             snort_rules.write(line)
@@ -248,10 +248,10 @@ def rules():
                                                                                  snort_json["msg"],
                                                                                  snort_json["sid"])
 
-                with open("/etc/snort/rules/simple_icmp_net.rules", 'r') as snort_rules:
+                with open("/etc/snort/rules/alert.rules", 'r') as snort_rules:
                     snort_lines = snort_rules.readlines()
 
-                with open("/etc/snort/rules/simple_icmp_net.rules", 'w') as snort_rules:
+                with open("/etc/snort/rules/alert.rules", 'w') as snort_rules:
                     for line in snort_lines:
                         if line != old_rule_string + '\n':
                             snort_rules.write(line)
