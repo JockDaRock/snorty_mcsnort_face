@@ -1,3 +1,3 @@
 MQTT=test.mosquitto.org
 MQTTPORT=1883
-NETINT=enp0s3
+NETINT=eth0
