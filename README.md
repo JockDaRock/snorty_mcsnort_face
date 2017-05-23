@@ -1,10 +1,9 @@
-# Snorty-McSnort-Face (Alpha)
+# Snorty-McSnort-Face
 
 ### Purpose of Snorty McSort face
 * Easy to deploy instance of a Snort Instrusion Detection System (IDS) in a small footprint container.
-* Provide a RESTful API to apply snort rules.
+* Provide a RESTful API to apply Snort rules.
 * Be able to send alerts to a MQTT message broker for "real-time" message alerting and processing.
-* Scale Snort.
 
 
 >Disclaimer: This is still early stages.  So if you have any suggestions, problems, or requests you would like to see.  Please let me know!
@@ -18,8 +17,8 @@ There is a little bit of configuration required at runtime for environment varia
 1. Have Docker and Python (Python version 2 or 3 is fine) installed on the computer you are working from.
 2. At Least basic knowledge of Python and Docker.
 3. Knowledge of building and deploying Docker containers from commandline. 
-4. Have a MQTT Broker to send alert messages to and receive alerts from.  Alternatively you can use the [Public Mosquitto MQTT Broker](https://test.mosquitto.org/) on port 1883 as your MQTT broker.
-5. Familiarity with [Snort](https://www.snort.org/).
+4. Have a MQTT Broker to send alert messages to and receive alerts from.  Alternatively you can use one you have already setup.  DISCLAIMER: If using a public MQTT make sure you are using a secure connection on port 8883 with a username and password.
+5. Learn about [Snort](https://www.snort.org/) and [Snort Rules](http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html)
 6. Be able to use the [Postman client](https://www.getpostman.com/).
 6. Snort rules you want to test.  Please see the postman collection to apply rules via the API.
 
@@ -41,12 +40,12 @@ Modify the snort_config.rc file in this directory to account for the envrionment
 Change the values of MQTT and NETINT to reflect your environment and save the file.  It might look similar to the following:
 
 ```
-MQTT=your.mqttbroker.org
+MQTT=127.0.0.1
 MQTTPORT=1883
 NETINT=eth0
 ```
 
-Now let's pull the contaner from Docker Hub.
+Now let's pull the contaner from Docker Hub and, if needed, a MQTT broker from.
 
 ```shell
 $ docker pull jockdarock/snorty_mcsnort_face.
@@ -54,10 +53,10 @@ $ docker pull jockdarock/snorty_mcsnort_face.
 
 Before we deploy the container, we will go ahead and run the Python program for the MQTT subcscriber.
 
-In a different terminal window, navigate to the same working directory we are already in and modify line 3 the python file to connect to the MQTT Broker you are using.
+In a different terminal window, navigate to the same working directory and modify line 3 of the python file to connect to the MQTT Broker you are using.
 
 ```python
-MQTT = "test.mosquitto.org"
+MQTT = "127.0.0.1"
 ```
 
 Now that you have modified the file run the following command:
@@ -78,6 +77,7 @@ Now let's deploy the container using the following command.
 
 >Note: In the deployment of the Docker container we will be using --net=home flag.  This flag will give the Docker container the same network interfaces as the host.  This will give Snort the potential to monitor all traffic to and from the host.  If your host is set in promiscuous mode on your network, it will also give snort the potential to see everything on your network.
 
+For Linux:
 ```shell
 $ docker run -d --net=host --env-file snort_config.rc --name snort_face0 jockdarock/snorty_mcsnort_face
 ```
