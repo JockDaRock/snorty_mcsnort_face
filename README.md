@@ -17,7 +17,7 @@ There is a little bit of configuration required at runtime for environment varia
 1. Have Docker and Python (Python version 2 or 3 is fine) installed on the computer you are working from.
 2. At Least basic knowledge of Python and Docker.
 3. Knowledge of building and deploying Docker containers from commandline. 
-4. Have a MQTT Broker to send alert messages to and receive alerts from.  Alternatively you can use one you have already setup.  DISCLAIMER: If using a public MQTT make sure you are using a secure connection on port 8883 with a username and password.
+4. Have a MQTT Broker to send alert messages to and receive alerts from.  Alternatively you can use one you have already setup.  DISCLAIMER: If using a public MQTT make sure you are using a secure connection on port 8883 with a username and password.  you never know who could be listening ;).
 5. Learn about [Snort](https://www.snort.org/) and [Snort Rules](http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node27.html)
 6. Be able to use the [Postman client](https://www.getpostman.com/).
 6. Snort rules you want to test.  Please see the postman collection to apply rules via the API.
